@@ -1,0 +1,47 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="formGroup">
+
+      <mat-card-content>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" type="text" placeholder="Username"  name="username" required>
+          <mat-error *ngIf="formGroup.get('username').hasError('required')"><strong>Username</strong> is required</mat-error> 
+          <mat-error *ngIf="formGroup.get('username').hasError('pattern')">Please enter a valid<strong> username</strong></mat-error> 
+      </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" formControlName="email" matInput  placeholder="Ex. pat@example.com" name="email" required>
+            <mat-error *ngIf="formGroup.get('email').hasError('required')"><strong>Email</strong> is required</mat-error> 
+            <mat-error *ngIf="formGroup.get('email').hasError('email')">Please enter a valid<strong> email</strong></mat-error> 
+          </mat-form-field>
+        
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Enter your password" formControlName="password" (input)="onPasswordInput()" name="password"  required>
+          <mat-error *ngIf="password.hasError('required')"><strong>Password</strong> is required</mat-error>
+          <mat-error *ngIf="password.hasError('minlength')"><strong>Password</strong> must have at least {{minPw}} characters</mat-error>
+        </mat-form-field>
+        
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Confirm password</mat-label>
+          <input matInput type="password" placeholder="Confirm your password" formControlName="password2" (input)="onPasswordInput()" name="password2"  required>
+          <mat-error *ngIf="password2.hasError('required')">Please confirm your <strong> password </strong> </mat-error>
+           <mat-error *ngIf="password2.invalid && !password2.hasError('required')">Passwords don't match</mat-error>
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <button mat-stroked-button color="accent" class="btn-block" (click) = "register()" type="submit" >Register</button>
+      <div class="text-center fs-6">Already registred ?<a color="accent" routerLink="/login"> Log in</a> </div>
+
+    </form>
+  </mat-card>
+</div>

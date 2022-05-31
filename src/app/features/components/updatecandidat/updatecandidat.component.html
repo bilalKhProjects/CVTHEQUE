@@ -1,0 +1,79 @@
+
+                            
+                            <form class="example-form" [formGroup]="formAdd">
+                                <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+                                    <mat-icon class="close-icon" color="accent" >close</mat-icon>
+                                  </button>
+                                <strong><mat-label>Update Candidat </mat-label></strong><br>
+                                    <br><mat-form-field appearance="outline">
+                                        <mat-label>CIN </mat-label>
+                                        <input matInput placeholder="CIN" formControlName="cin" maxlength="8" required>
+                                        <mat-error *ngIf="formAdd.get('cin').hasError('required')"><strong>CIN</strong> is required</mat-error> 
+                                        <mat-error *ngIf="formAdd.get('cin').hasError('pattern')">Please enter a correct <strong>CIN</strong></mat-error> 
+                                      </mat-form-field>
+
+                                    <mat-form-field appearance="outline" >
+                                        <mat-label>Last Name </mat-label>
+                                        <input matInput placeholder="Last name" style="text-transform: capitalize;" formControlName="lastName" maxlength="20" required>
+                                        <mat-error *ngIf="formAdd.get('lastName').hasError('required')"><strong>Last name</strong> is required</mat-error>
+                                        <mat-error *ngIf="formAdd.get('lastName').hasError('pattern')"> <strong>Last name</strong> is not correct</mat-error>  
+                                      </mat-form-field>
+
+                                      <mat-form-field appearance="outline" >
+                                        <mat-label>Name </mat-label>
+                                        <input matInput placeholder="Name" formControlName="name" style="text-transform: capitalize;" maxlength="20"  required>
+                                        <mat-error *ngIf="formAdd.get('name').hasError('required')"><strong>Name</strong> is required</mat-error>
+                                        <mat-error *ngIf="formAdd.get('name').hasError('pattern')"> <strong>Name</strong> is not correct</mat-error>   
+                                      </mat-form-field>
+
+                                      <mat-form-field appearance="outline">
+                                        <mat-label>Gender</mat-label>
+                                        <mat-select placeholder="Gender" formControlName="gender"  required>
+                                          <mat-option value="Male">Male</mat-option>
+                                          <mat-option value="Female">Female</mat-option>
+                                        </mat-select>
+                                        <mat-error *ngIf="formAdd.get('gender').hasError('required')"><strong>Gender</strong> is required</mat-error> 
+                                      </mat-form-field>
+
+                                      <mat-form-field appearance="outline" >
+                                        <mat-label>Age </mat-label>
+                                        <input matInput placeholder="Age" type="number" formControlName="age" onkeypress="return event.charCode >= 48" min="18" max="30" onKeyDown="return false" required>
+                                        <mat-error *ngIf="formAdd.get('age').hasError('required')"><strong>Age</strong> is required</mat-error> 
+                                      </mat-form-field>
+
+                                      <mat-form-field appearance="outline" >
+                                        <mat-label>City </mat-label>
+                                        <input matInput placeholder="City" type="text" style="text-transform: capitalize;" formControlName="city" maxlength="10" pattern="[a-zA-Z ]*$"  required>
+                                        <mat-error *ngIf="formAdd.get('city').hasError('required')"><strong>City</strong> is required</mat-error> 
+                                        <mat-error *ngIf="formAdd.get('city').hasError('pattern')">Please enter a correct <strong>City</strong></mat-error> 
+                                      </mat-form-field>
+
+                                      <mat-form-field appearance="outline">
+                                        <mat-label>Experience</mat-label>
+                                        <mat-select placeholder="Experience" type="text" formControlName="exp" required>
+                                            <mat-option value="No experience">No experience</mat-option>
+                                          <mat-option value="1-5 years">1-5 years</mat-option>
+                                          <mat-option value="5-10 years">5-10 years</mat-option>
+                                          <mat-option value="10 years+">10 years +</mat-option>
+                                        </mat-select>
+                                        <mat-error *ngIf="formAdd.get('exp').hasError('required')"><strong>Experience</strong> is required</mat-error> 
+                                      </mat-form-field><br>
+
+                                      <strong><mat-label>Update CV</mat-label></strong><br>
+                                          
+                                          <mat-form-field> 
+                                            <mat-input *ngIf="selectedFiles; else newFile"><span class='material-icons' >done</span> {{selectedFiles.name}}</mat-input>
+                                            <mat-input *ngIf="showMessageError" style="color:red" ><span class="material-icons" style="color:red">error</span> {{messageError}}</mat-input>
+                                            <ng-template #newFile required>
+                                            </ng-template>
+                                            <input matInput disabled> 
+                                            <button mat-icon-button matSuffix (click)="fileInput.click()">
+                                                <mat-icon>attach_file</mat-icon>
+                                            </button>
+                                            <input hidden (change)="selectFile($event)" #fileInput formControlName="cv" type="file" id="file" accept="application/pdf" >
+                                          </mat-form-field>
+
+
+                                    <br><button mat-raised-button color="accent" type="submit" (click)="onclick()" >Update</button>
+                                    </form>
+                                               

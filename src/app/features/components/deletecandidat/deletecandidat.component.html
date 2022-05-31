@@ -1,0 +1,8 @@
+<form class="example-form" >
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+        <mat-icon class="close-icon" color="accent" >close</mat-icon>
+      </button>
+      <strong><mat-label>Delete Candidat </mat-label></strong><br>
+      <br><mat-label>Are you sure you want delete candidat ? </mat-label>
+      <br><br><button mat-raised-button color="accent" type="submit" (click)="deleteCandidat.emit()" >Yes</button>
+</form>

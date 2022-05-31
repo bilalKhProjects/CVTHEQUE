@@ -1,0 +1,99 @@
+<ng-container *ngIf="isAuthenticated()">
+    <angular-app-header (toggleSideBarForMe)="sideBarToggler($event)"></angular-app-header>
+    <mat-drawer-container>
+ 
+        <mat-drawer class="mat-elevation-z8"  mode="side" [opened]="sideBarOpen">
+            <angular-app-sidebar></angular-app-sidebar>
+        </mat-drawer>
+     
+       
+    <mat-drawer-content>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" fxLayoutGap.gt-sm="250px" fxLayoutGap.lt.md="20px" >
+            <div fxFlex="100" >
+                 <div class="mat-elevation-z8" >
+                        <mat-form-field class="filter">
+                            <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+                        </mat-form-field>
+                         <div>
+                            <a class="addbutton" mat-raised-button color="accent" (click)="openDialog()"><mat-icon>add</mat-icon>Add candidat</a>
+                        </div>
+                    <table mat-table [dataSource]="dataSource" >
+
+                
+                    <ng-container matColumnDef="cin">
+                        <th mat-header-cell *matHeaderCellDef> CIN </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cin}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                     </ng-container>
+
+                    <ng-container matColumnDef="lastName">
+                        <th mat-header-cell *matHeaderCellDef> Last name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="sexe">
+                        <th mat-header-cell *matHeaderCellDef> Gender </th>
+                        <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="age">
+                        <th mat-header-cell *matHeaderCellDef> Age </th>
+                        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ville">
+                        <th mat-header-cell *matHeaderCellDef> City </th>
+                        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="exp">
+                        <th mat-header-cell *matHeaderCellDef> Experience </th>
+                        <td mat-cell *matCellDef="let element"> {{element.exp}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="details">
+                        <th  mat-header-cell *matHeaderCellDef> Details </th>
+                        <td  mat-cell *matCellDef="let element">    
+                            <!--<button mat-icon-button (click)="getCandidatById(element._id)"> -->
+                            <button mat-icon-button (click)="openDetailDialog(element)">
+                                <mat-icon  style="color:rgb(112, 83, 241)">list</mat-icon> 
+                            </button>
+                         </td>
+                    </ng-container>
+
+
+                     <ng-container matColumnDef="delete">
+                        <th  mat-header-cell *matHeaderCellDef> Delete </th>
+                         <td  mat-cell *matCellDef="let element">    
+                        <button mat-icon-button (click)="deleteOneCandidat(element)">
+                            <mat-icon  style="color:rgb(247, 14, 14)">delete</mat-icon> 
+                         </button>
+                          </td>
+                     </ng-container>
+
+                    <ng-container matColumnDef="update">
+                        <th mat-header-cell *matHeaderCellDef> Update </th>
+                         <td  mat-cell *matCellDef="let element">       
+                        <button mat-icon-button (click)="openUpdateDialog(element)">
+                        <mat-icon  style="color:rgb(236, 51, 125)">system_update</mat-icon></button></td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                     <mat-paginator [pageSizeOptions]="[5, 10, 20]" (page)="pageChanged($event)"></mat-paginator>
+                </div>
+    </div>
+</div>     
+        </mat-drawer-content>   
+            </mat-drawer-container>
+                    </ng-container>
+            <ng-template #deleteTpl>
+                 <app-deletecandidat (deleteCandidat)="deleteCandidat()">
+
+                 </app-deletecandidat>
+            </ng-template>

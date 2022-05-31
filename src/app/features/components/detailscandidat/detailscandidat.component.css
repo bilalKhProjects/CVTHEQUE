@@ -1,0 +1,48 @@
+
+#detailCandidat{
+  text-align: center;
+  width: 200px;
+    margin-left: 40px;
+    margin-top: 6px;
+}
+
+.title{
+    border-bottom: 1px solid rgb(231, 51, 150);
+    margin: 15px;
+    padding-left: 1px;
+    padding-bottom:6px ;
+    padding-right: 70px;
+}
+
+
+.close-button{
+    float: right;
+    top:-21px;
+    right:-24px;
+  }
+
+  .close-icon {
+    transition: 1s ease-in-out;
+  }
+  .close-icon:hover {
+    transform: rotate(180deg);
+  }
+
+  ::ng-deep .icon-outside .close-button{
+    float: right;
+    top:-52px;
+    right:-52px;
+  }
+  .FermerButton{
+      margin-left: 260px;
+      margin-top: 20px;
+  }
+  .downloadButton{
+    height: 32px;
+    margin-top:-6px;
+    margin-right:26px;
+    margin-bottom:15px
+  }
+ 
+ 
+ 

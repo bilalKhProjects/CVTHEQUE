@@ -1,0 +1,48 @@
+
+                            
+                                <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+                                    <mat-icon class="close-icon" color="accent" >close</mat-icon>
+                                  </button>
+
+    <strong><mat-label class="title"> Candidat details :</mat-label></strong><br><br>
+
+    
+                        
+                <mat-card class="mat-elevation-z8" >
+                            <div id="detailCandidat" fxLayout="column wrap" fxLayoutGap="20px">
+                                <div fxLayout="row wrap" fxFlex>
+                                  <div fxFlex><strong>Name:</strong></div>
+                                  <div fxFlex >{{detailCandidat?.name}}</div>
+                                </div>
+                                <div fxLayout="row wrap" fxFlex>
+                                    <div fxFlex><strong>Last name :</strong></div>
+                                    <div fxFlex>{{detailCandidat?.lastName}}</div>
+                                </div>
+                                  <div fxLayout="row wrap" fxFlex>
+                                    <div fxFlex><strong> Gender :</strong></div>
+                                    <div fxFlex>{{detailCandidat?.gender}}</div>
+                                  </div>
+                                  <div fxLayout="row wrap" fxFlex>
+                                    <div fxFlex><strong>Age:</strong></div>
+                                    <div fxFlex>{{detailCandidat?.age}}</div>
+                                  </div>
+                                  <div fxLayout="row wrap" fxFlex>
+                                    <div fxFlex><strong>City:</strong></div>
+                                    <div fxFlex>{{detailCandidat?.city}}</div>
+                                  </div>
+                                  <div fxLayout="row wrap" fxFlex>
+                                    <div fxFlex><strong>Experience:</strong></div>
+                                    <div fxFlex >{{detailCandidat?.exp}}</div>
+                                  </div><br>
+                                  <div fxLayout="row wrap" fxFlex>
+                                    <div fxFlex><strong>Candidat's CV:</strong></div>
+                                    <button mat-raised-button class="downloadButton"><mat-icon color="accent" (click)="onClickDownloadPdf()">download</mat-icon></button>
+                                  </div>
+                
+                
+                        </div>
+                    </mat-card>
+  
+        <br><button mat-raised-button class="FermerButton" color="accent" type="submit" [mat-dialog-close]="true" >Fermer</button>
+                                    
+                                               

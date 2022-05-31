@@ -1,0 +1,37 @@
+<ng-container *ngIf="isAuthenticated()">
+<angular-app-header (toggleSideBarForMe)="sideBarToggler($event)"></angular-app-header>
+
+<mat-drawer-container>
+    <mat-drawer class="mat-elevation-z8" mode="side" [opened]="sideBarOpen">
+        <angular-app-sidebar></angular-app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+            
+            <mat-card id="example-card" class="mat-elevation-z8">
+                 <mat-card-title>Les candidats </mat-card-title>
+                     <img mat-card-image src="https://i.ibb.co/hY2207Q/conseil-gestion-candidature-e1495032739419.png" alt="Candidats">
+                     <mat-card-actions>
+                    <button mat-button routerLink="/cv">Voir plus</button>
+                 </mat-card-actions>
+             </mat-card>
+             <mat-card id="example-card" class="mat-elevation-z8">
+                <mat-card-title >Les employés </mat-card-title>
+                    <img mat-card-image src="https://i.ibb.co/wynLtFb/LM.jpg" alt="Employés">
+               <mat-card-actions>
+                   <button mat-button routerLink="/cv">Voir plus</button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card id="example-card" class="mat-elevation-z8">
+                <mat-card-title>Les stagiaires</mat-card-title>
+                    <img mat-card-image src="https://i.ibb.co/fxz517m/st.jpg" alt="stagiaires">
+               <mat-card-actions>
+                   <button mat-button routerLink="/cv">Voir plus</button>
+                </mat-card-actions>
+            </mat-card>
+
+            
+        </div>     
+    </mat-drawer-content>
+</mat-drawer-container>
+</ng-container>

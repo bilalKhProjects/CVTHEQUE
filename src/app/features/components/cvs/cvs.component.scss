@@ -1,0 +1,53 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 750px;
+    min-height: 500px;
+
+  }
+
+  mat-drawer {
+    width: 170px;
+    height: 400px;
+    margin-top: 20px;
+  }
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+    height: 80%;
+  }
+  ::ng-deep .snack-success{
+    background-color:rgb(222, 249, 217);
+    color: rgb(14, 14, 14);
+}
+  
+  .stats-cards {
+    .mat-card {
+      overflow: hidden;
+    }
+  }
+  
+  table {
+    width: 100%;
+  }
+  #icon{
+    float:right;
+    cursor:pointer;
+    margin-left:10px;
+  }
+  .addbutton{
+    float:right;
+    margin-right: 30px;
+    margin-top: 20px;
+  }
+  .filter{
+    float: left;
+    margin-top: 10px;
+    margin-left:50px;
+    outline-offset: 10px;
+  }
+

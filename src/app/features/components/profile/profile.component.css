@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgba(240, 248, 255, 0.783);
+  }
+  mat-drawer {
+    width: 170px;
+    height: 400px;
+    margin-top: 20px;
+  }
+  
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  .content {
+    padding: 16px;
+}
+::ng-deep .snack-success{
+  background-color:rgb(222, 249, 217);
+  color: rgb(14, 14, 14);
+}
+::ng-deep .snack-error{
+background-color:rgb(245, 157, 157);
+color: rgb(14, 14, 14);
+}
+#example-card {
+    width: 230px;
+    margin-left: 70px;
+    margin-top: 50px;
+}

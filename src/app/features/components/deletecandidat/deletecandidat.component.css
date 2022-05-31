@@ -1,0 +1,30 @@
+
+.close-button{
+    float: right;
+    top:-21px;
+    right:-24px;
+  }
+
+  .close-icon {
+    transition: 1s ease-in-out;
+  }
+  .close-icon:hover {
+    transform: rotate(180deg);
+  }
+  ::ng-deep .snack-success{
+    background-color:rgb(222, 249, 217);
+    color: rgb(14, 14, 14);
+}
+::ng-deep .snack-error{
+  background-color:rgb(245, 157, 157);
+  color: rgb(14, 14, 14);
+}
+
+  ::ng-deep .icon-outside .close-button{
+    float: right;
+    top:-52px;
+    right:-52px;
+  }
+
+ 
+  
