@@ -31,6 +31,11 @@ Pour build :
 ```shell
 ng build
 ```
+Pour run :
+
+```shell
+npm start
+```
 
 ### Setup NodeJS back-end server :
 
