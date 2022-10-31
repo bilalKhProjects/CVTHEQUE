@@ -1,4 +1,5 @@
 # CVTHEQUE PROJECT 
+## I.  Preview :
 
 ![image](https://user-images.githubusercontent.com/75738584/171199095-0424737b-847e-4728-a389-586f765edbc1.png)
 
@@ -18,7 +19,7 @@ git clone https://github.com/bilalKhProjects/CVTHEQUE
 cd CVTHEQUE
 ```
 
-### 2. Setup NodeJS back-end server :
+### 2. Configuration back-end :
 
 D'abord démarrez le server mongodb avec la commande suivante :
 
@@ -31,7 +32,7 @@ Puis démarrez le node server, tapez la commande suivante. Assurez-vous que vous
 nodemon server
 ```
 
-### 3.  Setup Angular CLI :
+### 3. Configuration Front-End :
 
 Install the `npm` packages described in the `package.json` and verify that it works:
 
