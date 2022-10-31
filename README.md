@@ -1,4 +1,4 @@
-# I.  CVTHEQUE PROJECT 
+# CVTHEQUE PROJECT 
 
 ![image](https://user-images.githubusercontent.com/75738584/171199095-0424737b-847e-4728-a389-586f765edbc1.png)
 
