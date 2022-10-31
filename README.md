@@ -7,9 +7,9 @@
 
 Projet CV-THEQUE est un projet qui consiste à regrouper les informations des candidats à la recherche d'emploi dans une base de données.
 
-Ce projet a été généré avec Angular CLI 13.2.6 en Front-end, NodeJS 16.14.0 en Back-end, base de données MongoDB et l'IDE Visual 
+Ce projet a été généré avec Angular CLI 13.2.6 en Front-end, NodeJS 16.14.0 en Back-end, base de données MongoDB et l'IDE 
 
-studio code.
+Visual Studio Code.
  
 ## III. Mode d'utilisation 
 
