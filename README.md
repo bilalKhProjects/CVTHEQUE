@@ -25,7 +25,11 @@ cd CVTHEQUE
 D'abord démarrez le server mongodb avec la commande suivante :
 
 ```shell
+
+src auth 
+
 mongod
+
 ```
 Puis démarrez le node server, tapez la commande suivante. Assurez-vous que vous vous trouvez dans le dossier auth.
 
